@@ -1,37 +1,143 @@
-/* YOUR STYLING HERE */
-.PlaylistCollection {
-  background-color: $light-grey;
-  height: 200px;
-  border-style: solid;
-  border-color: $grey;
-  padding: 0;
+body {
+  background-color: #010;
+  filter: blur(1px);
+  animation: colorPulse 3s infinite ease-in-out;
+
+  font-family: monospace;
+  font-size: 1.5em;
+
+  color: #9F9;
+  text-shadow: 1px 0px 5px #0F0,
+    -1px 0px 2px #0F0;
+
+  font-weight: light;
+  line-height: 2em;
+
+  margin: 100px;
 }
 
-.SongList {
-  background-color: $light-grey;
-  height: 200px;
-  border-style: solid;
-  border-color: $grey;
+body:before {
+  animation:wave 9s infinite ease-in-out;
+  content:"";
+  height:20vh;
+  left:0;
+  right:0;
+  opacity:.5;
+  position:fixed;
+  z-index:1;
 }
 
-.SelectedSong {
-  background-color: $light-grey;
-  height: 200px;
-  border-style: solid;
-  border-color: $grey;
+body:after {
+    background-image:linear-gradient(transparent, transparent 3px, #222);
+    background-size:4px 4px;
+    pointer-events: none;
+    bottom:0;
+    content:"";
+    left:0;
+    position:fixed;
+    right:0;
+    top:0;
+    z-index:2;
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    color:#2EB82E;
+  }
+  48%, 52% {
+    color:#99E699;
+  }
+  50% {
+    color:#ADEBAD;
+  }
+}
+
+@keyframes wave {
+  0% {
+    box-shadow:0 -10vh 20vh #0c0;
+    top:-100vh;
+  }
+  48%, 52% {
+    box-shadow:0 -10vh 20vh #090;
+  }
+  50% {
+    box-shadow:0 -10vh 20vh #060;
+  }
+  100% {
+    box-shadow:0 -10vh 20vh #0c0;
+    top:200vh;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: monospace;
+}
+
+h1.thin, h2.thin, h3.thin, h4.thin, h5.thin, h6.thin {
+  font-weight: 300;
+  font-family: monospace;
+}
+
+h1.caps, h2.caps, h3.caps, h4.caps, h5.caps, h6.caps {
+  text-transform: uppercase;
+  font-family: monospace;
 }
 
 ul {
+  width: 80%;
+  max-width: 500px;
+  border: 1px solid #9F9;
   list-style: none;
-  width: 100%;
-  margin: 0px;
+}
+
+li {
+  padding: 5px;
+}
+
+li>ul {
+  max-width: 90%;
+  border: 1px solid #9F9;
+  box-sizing: border-box;
+}
+
+a {
+    color: #9F9;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+    color: 010;
+    background-color: #9F9;
+}
+
+input {
+  background-color: 010;
+  border-color: 010;
+  color: #9F9;
+  font-family: monospace;
+  outline: none;
+}
+
+table {
+  border: 1px solid #9F9;
+  box-sizing: border-box;
+}
+
+th {
+  border: 1px solid #9F9;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #9F9;
+  box-sizing: border-box;
+  border-collapse: collapse;
 }
 
 .selected {
-  background-color: $yellow;
-  width: 100%
-}
-
-div {
-  color: $blue;
+  font-weight: 900;
 }
